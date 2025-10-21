@@ -1,0 +1,62 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>This Exploit Still Works — FutureSideHustles</title>
+  <style>
+    :root{--accent:#0b63ff;--bg:#0f1720;--card:#0b1220;--muted:#9aa4b2;--white:#eef2f7}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:linear-gradient(180deg,#071029 0%, #071828 100%);color:var(--white);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:48px auto;padding:28px;background:rgba(255,255,255,0.02);border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    h1{font-size:22px;margin:0 0 8px}
+    p.lead{margin:0 0 18px;color:var(--muted);line-height:1.4}
+    form{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+    input[type="email"]{flex:1;min-width:220px;padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:var(--white);font-size:15px}
+    button{background:var(--accent);border:0;color:white;padding:12px 18px;border-radius:8px;font-weight:600;cursor:pointer}
+    .sub{margin-top:12px;color:var(--muted);font-size:13px}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+    .card{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;text-align:center}
+    @media(max-width:520px){.features{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap" role="main">
+    <h1>Exploit Active — Unlock the Micro-Funnel Kit</h1>
+    <p class="lead">This mobile-first kit shows the exact micro-funnel Gen Z operators use to convert on impulse — plug & play, patch-proof checklist, and 10 viral hooks. Enter your email to get instant access (PDF delivered to you).</p>
+    
+    <!-- IMPORTANT: replace FORM_ACTION with your Formspree / Zapier / webhook URL -->
+    <form id="captureForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="return handleSubmit(event)">
+      <input type="email" id="email" name="email" placeholder="you@domain.com" required autocomplete="email" />
+      <button type="submit">Get Early Access</button>
+      <input type="hidden" name="_redirect" value="thankyou.html">
+    </form>
+    <div class="sub">No spam. Instant download. 24-hour refund if it doesn’t work.</div>
+    
+    <div class="features" aria-hidden="true">
+      <div class="card"><strong>Plug & Play</strong><div class="muted">Copy/paste funnel + bio script</div></div>
+      <div class="card"><strong>Launch Fast</strong><div class="muted">10 hooks + 3 CapCut flows</div></div>
+      <div class="card"><strong>Patch-Proof</strong><div class="muted">Re-template checklist included</div></div>
+      <div class="card"><strong>Mobile First</strong><div class="muted">Designed for TikTok traction</div></div>
+    </div>
+    
+    <footer>FutureSideHustles — early access money intel for Gen Z.</footer>
+  </div>
+
+<script>
+// Simple client-side handler to provide a helpful message if the site owner hasn't replaced the form action.
+function handleSubmit(e){
+  var form = document.getElementById('captureForm');
+  var action = form.getAttribute('action');
+  if(action.includes('YOUR_FORM_ID')){
+    e.preventDefault();
+    alert("Quick setup step: replace the form 'action' URL with your Formspree (or webhook) endpoint. Then this form will capture emails and redirect to the thank-you page.");
+    return false;
+  }
+  // otherwise allow default submit to external service (Formspree / webhook)
+  return true;
+}
+</script>
+</body>
+</html>
